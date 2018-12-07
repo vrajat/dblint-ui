@@ -24,8 +24,6 @@ function feature(state = features.formatter, action) {
 }
 
 function uuid(state = null, action) {
-  console.log("Reducer: " + action.type);
-  console.log("Reducer: " + action.uuid);
   switch (action.type) {
     case 'SET_UUID':
       return action.uuid;

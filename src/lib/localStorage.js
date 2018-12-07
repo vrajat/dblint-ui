@@ -26,16 +26,13 @@ export const getUuid= (store) => {
   let localState = loadState();
   let curUuid = null;
   if (localState == null) {
-    console.log("New UUID");
-    curUuid = v4()
+    curUuid = v4();
     saveState({
       uuid: curUuid
     })
   } else {
-    console.log("Found UUID:" + localState.uuid);
     curUuid = localState.uuid;
   }
-  console.log ("Will set uuid to:" + curUuid);
   store.dispatch({
     type: 'SET_UUID',
     uuid: curUuid
