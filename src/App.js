@@ -3,6 +3,9 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 // import { renderRoutes } from 'react-router-config';
 import Loadable from 'react-loadable';
 import './App.scss';
+import { loadState } from "./lib/localStorage";
+import { v4 } from 'node-uuid';
+import { Mixpanel } from "./lib/MixPanel";
 
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
@@ -13,8 +16,7 @@ const DefaultLayout = Loadable({
 });
 
 class App extends Component {
-
-  render() {
+ render() {
     return (
       <HashRouter>
           <Switch>
