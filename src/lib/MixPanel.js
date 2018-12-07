@@ -11,11 +11,17 @@ let actions = {
     if (env_check) mixpanel.alias(id);
   },
   track: (name, props) => {
+    console.log("track:" + name);
+    console.log("track:" + JSON.stringify(props));
     if (env_check) mixpanel.track(name, props);
   },
   people: {
     set: (props) => {
       if (env_check) mixpanel.people.set(props);
+    },
+    set_once: (props) => {
+      console.log("set_once:" + JSON.stringify(props));
+      if (env_check) mixpanel.people.set_once(props);
     },
   },
 };
