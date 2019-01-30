@@ -66,7 +66,7 @@ class DbApp extends Component {
                         )} />
                     ) : (null);
                   })}
-                  <Redirect from="/" to="/mysql/sql-formatter" />
+                  <Redirect from="/" to="/redshift/sql-formatter" />
                 </Switch>
               </Suspense>
             </Container>

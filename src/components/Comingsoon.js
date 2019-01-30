@@ -16,6 +16,7 @@ import {
 } from "reactstrap";
 import FontAwesome from "react-fontawesome";
 import { Mixpanel } from "../lib/MixPanel";
+import axios from "axios"
 
 class Comingsoon extends Component {
   constructor(props) {
@@ -38,11 +39,29 @@ class Comingsoon extends Component {
     Mixpanel.people.set_once({
       email: this.state.email
     });
+
+    const registerInfo = {
+      feature: "etl",
+      email: this.state.email
+    };
+
+    const url = "/api/dblint/register";
+    axios({
+      method: "post",
+      url: url,
+      data: registerInfo,
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+    }).catch(function(error) {
+      console.log(error);
+    });
   }
 
   render() {
     return (
-      <div className="app flex-row align-items-center">
+      <div className="align-items-center">
         <Container>
           <Row className="justify-content-center">
             <Col md="9" lg="7" xl="6">
@@ -80,7 +99,7 @@ class Comingsoon extends Component {
                 <CardFooter className="p-4">
                   <Row>
                     <Button className="btn-github mb-1" block
-                            href="https://github.com/dblintio/frontend/issues/8">
+                            href="https://github.com/dblintio/frontend/issues/11">
                       <FontAwesome name="github"/>
                       <span>  Watch the Github Issue</span>
                     </Button>

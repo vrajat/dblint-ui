@@ -21,10 +21,10 @@ export const features = {
     icon: 'fa fa-gears',
     component: SqlText
   },
-  slow_log: {
-    url: "slow-log",
-    display: "Slow Query Logs",
-    icon: 'fa fa-file',
+  etl_perf: {
+    url: "etl-perf",
+    display: "ETL Performance",
+    icon: 'fa fa-fighter-jet',
     component: Comingsoon
   }
 };
