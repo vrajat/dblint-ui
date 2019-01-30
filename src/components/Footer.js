@@ -41,7 +41,7 @@ class Footer extends Component {
     return (
       <Container>
         <Row>
-          <Col sm={4}> &copy; 2018 <a href="https://dblint.io">Dblint</a></Col>
+          <Col sm={4}> &copy; 2019 <a href="https://dblint.io">Dblint</a></Col>
           <Col className="ml-auto" sm={4}>
             <Button color="danger" size="sm"
                     href="https://github.com/dblintio/frontend/issues">

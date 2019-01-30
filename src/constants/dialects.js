@@ -1,14 +1,14 @@
 import { features } from './features';
 
 export const dialects = {
+ redshift: {
+    name: "REDSHIFT",
+    display: "AWS Redshift",
+    features: ["formatter", "digest", "etl_perf"]
+  },
   mysql: {
     name: "MYSQL",
     display: "MySQL",
-    features: ["formatter", "digest", "slow_log"]
-  },
-  redshift: {
-    name: "REDSHIFT",
-    display: "AWS Redshift",
     features: ["formatter", "digest"]
   },
   postgres:{
